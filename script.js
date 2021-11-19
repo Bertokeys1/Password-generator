@@ -28,7 +28,7 @@ function generatePassword(){
   uprPrompt = confirm(" Would you like to inlude uppercase letters? ")
   spclPrompt = confirm("would you like to include special characters? ")
 
-  if ( !numPrompt && !lwrPrompt && !uprPrompt && !spclPrompt)
+  if ( !numPrompt && !lwrPrompt && !uprPrompt && !spclPrompt);
 }
 
 
