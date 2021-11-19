@@ -22,13 +22,37 @@ function generatePassword(){
   else if(pwLength > 128 ) {
     prompt (" Password needs to be lower than 128 characters. ");
     return "";
-  }
-  numPrompt = confirm(" Would you like to include numbers? ")
-  lwrPrompt = confirm(" would you like to include lowercase letters? ")
-  uprPrompt = confirm(" Would you like to inlude uppercase letters? ")
-  spclPrompt = confirm("would you like to include special characters? ")
+  } else {
+    numPrompt = confirm(" Would you like to include numbers? ")
+    lwrPrompt = confirm(" would you like to include lowercase letters? ")
+    uprPrompt = confirm(" Would you like to inlude uppercase letters? ")
+    spclPrompt = confirm("would you like to include special characters? ")
 
-  if ( !numPrompt && !lwrPrompt && !uprPrompt && !spclPrompt);
+
+    if ( !numPrompt && !lwrPrompt && !uprPrompt && !spclPrompt) {
+    prompt (" Password mush contain at least one lowercase, one upper case, and special characters");
+    return "";
+    }
+    if (numprompt){
+      var numPick = Math.floor(Math.random() * numeric.length);
+      pwChrctrs = numPick[numPrompt];
+
+      if (lwrPrompt) {
+        var lwrPick = Math.floor(Math.random() * lowercase.length);
+        pwChrctrs = lwrPick[lwrPrompt];
+      }
+
+      if (uprPrompt) {
+        var uprPick = Math.floor(Math.random() * uppercase.length);
+        uprPick = uprPick[uprPrompt];
+      }
+      if (spclPrompt) {
+        var spclPick = Math.floor(Math.random() * special.length);
+        pwChrctrs = spclPick[spclPrompt];
+      }
+
+  }
+  }
 }
 
 
