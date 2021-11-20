@@ -11,9 +11,9 @@ var uprPrompt = false;
 var spclPrompt = false;
 
 function generatePassword(){
-  var pwLength = prompt( " Please select passwork length (between 8-128 characters) ")
+  var pwLength = prompt( " Please select password length (between 8-128 characters) ")
   var pwChrctrs = [];
-  var pwResult = [];
+  var password = [];
 
   if(pwLength < 8 ) {
     prompt (" Password needs to be greater than 8 characters. ");
@@ -29,31 +29,15 @@ function generatePassword(){
     spclPrompt = confirm("would you like to include special characters? ")
 
 
-    if ( !numPrompt && !lwrPrompt && !uprPrompt && !spclPrompt) {
-    prompt (" Password mush contain at least one lowercase, one upper case, and special characters");
-    return "";
-    }
-    if (numprompt){
-      var numPick = Math.floor(Math.random() * numeric.length);
-      pwChrctrs = numPick[numPrompt];
+    if (!uprPrompt &&  !lwrPrompt && !numPrompt && !spclPrompt) {
+      alert("Please choose at least one option.");
+      return "";
 
-      if (lwrPrompt) {
-        var lwrPick = Math.floor(Math.random() * lowercase.length);
-        pwChrctrs = lwrPick[lwrPrompt];
-      }
-
-      if (uprPrompt) {
-        var uprPick = Math.floor(Math.random() * uppercase.length);
-        uprPick = uprPick[uprPrompt];
-      }
-      if (spclPrompt) {
-        var spclPick = Math.floor(Math.random() * special.length);
-        pwChrctrs = spclPick[spclPrompt];
-      }
-
-  }
-  }
 }
+  
+  
+  
+
 
 
 
@@ -61,6 +45,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
